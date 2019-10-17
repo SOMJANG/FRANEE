@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>첫번째 어플리케이션</title>
+			<link rel='stylesheet', href="{{url_for('static', filename='style.css')}}">
+	</head>
+
+	<body>
+		<style>
+			body {
+				padding-top: 300px;
+				text-align: center;
+			}
+
+			.searchTextField {
+				width: 400px;
+				border: 4px solid #00B4CC;
+				padding: 5px;
+			    height: 35px;
+				border-radius: 5px 5px 5px 5px;
+				outline: none;
+				color: #9DBFAF;
+				font-size: 35px;
+
+			}
+
+			.searchButton {
+				  width: 100px;
+				  height: 36px;
+				  border: 1px solid #00B4CC;
+				  background: #00B4CC;
+				  text-align: center;
+				  color: #fff;
+				  border-radius: 5px 5px 5px 5px;
+				  cursor: pointer;
+				  font-size: 20px;
+				}
+
+		</style>
+		{% from "_formhelpers.html" import render_field %}
+		<!-- <div>이름을 입력해주세요</div> -->
+		<!-- <img src="franee.png", width="550", height="200"/> -->
+		<div class="centerclass"><img src="{{ url_for('static', filename='image/test.png') }}", width="700" height="200"></div>
+
+		<form method=post action="/hello">
+			<dl>
+				{{ render_field(form.sayhello, class="searchTextField") }}
+			</dl>
+
+			<input class="searchButton" type=submit value='검색' name='submit_bin', width="100", height="50">
+		
+		</form>
+
+
+	</body>
+</html>

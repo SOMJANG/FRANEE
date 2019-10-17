@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pandas-highcharts
+Version: 0.5.2
+Summary: pandas-highcharts is a Python package which allows you to easily build Highcharts plots with pandas.DataFrame objects.
+Home-page: https://github.com/gtnx/pandas-highcharts
+Author: Guillaume Thomas
+Author-email: guillaume.thomas642@gmail.com
+License: LICENSE
+Description: UNKNOWN
+Platform: UNKNOWN
