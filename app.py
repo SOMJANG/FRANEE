@@ -54,8 +54,8 @@ def hello():
         print(testJsonData)
         return render_template('hello.html', name=name,
                                tables=[mydfs[0].to_html(classes='test1')], titles=mydfs[0].columns.values,
-                               tables2=[mydfs[1].to_html(classes='data')], titles2=mydfs[1].columns.values,
-                               tables3=[mydfs[2].to_html(classes='data')], titles3=mydfs[2].columns.values,
+                               tables2=[mydfs[1].to_html(classes='test2')], titles2=mydfs[1].columns.values,
+                               tables3=[mydfs[2].to_html(classes='test3')], titles3=mydfs[2].columns.values,
                                tables4=[mydfs[3].to_html(classes='data')], titles4=mydfs[3].columns.values,
                                tables5=[mydfs[4].to_html(classes='data')], titles5=mydfs[4].columns.values,
                                tables6=[mydfs[5].to_html(classes='data')], titles6=mydfs[5].columns.values,

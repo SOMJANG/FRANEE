@@ -18,6 +18,13 @@
 		<div><h1>{{ name }} </h1></div>
 
 		<style>
+			@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+			body{
+			  /*background: #f2f2f2;*/
+			  font-family: 'Open Sans', sans-serif;
+
+			}
 			table { 
 				border-collapse: collapse; 
 				/*text-align: left; */
@@ -41,9 +48,24 @@
 				text-align: right;
 			}
 
-			.test1 {
-
+			table.test1 th { 
+				width: 100px; 
+				padding: 10px; 
+				font-weight: bold; 
+				vertical-align: top; 
+				border: 1px solid #ccc; 
+				background:#FFDEA9;
 			}
+
+			table.test1 td{
+				width: 400px; 
+				height: 27px;
+				padding: 10px; 
+				vertical-align: top; 
+				border: 1px solid #ccc; 
+				text-align: right;
+			}
+
 			
 			.test2 {
 				font-weight: bold;
@@ -130,8 +152,13 @@
 				grid-row:  1/ 2;
 			}
 			.box22 {
-				grid-column: 1 / 3;
+				grid-column: 1 / 4;
 				grid-row: 2 / 3;
+			}
+
+			.box23 {
+				grid-column: 1 / 4;
+				grid-row: 3 / 4;
 			}
 		</style>
 		
@@ -139,7 +166,7 @@
 			<div class="box1">
 			<!-- <div> -->
 			{% for table in tables %}
-				{{ titles[loop.index]}}
+				<!-- {{ titles[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
@@ -147,7 +174,7 @@
 			<!-- <div> -->
 			<div class="box2">
 			{% for table in tables7 %}
-				{{ titles7[loop.index]}}
+				<!-- {{ titles7[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
@@ -156,7 +183,7 @@
 			<!-- <div> -->
 			<div class='box3'>
 			{% for table in tables8 %}
-				{{ titles8[loop.index]}}
+				<!-- {{ titles8[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
@@ -164,7 +191,7 @@
 			<!-- <div> -->
 			<div class='box4'>
 			{% for table in tables9 %}
-				{{ titles9[loop.index]}}
+				<!-- {{ titles9[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
@@ -172,7 +199,7 @@
 			<!-- <div> -->
 			<div class="box5">
 			{% for table in tables10 %}
-				{{ titles10[loop.index]}}
+				<!-- {{ titles10[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
@@ -180,28 +207,28 @@
 
 			<div class="box6">
 			{% for table in tables6 %}
-				{{ titles6[loop.index]}}
+				<!-- {{ titles6[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
 
 			<div class="box7">
 			{% for table in tables11 %}
-				{{ titles11[loop.index]}}
+				<!-- {{ titles11[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
 
 			<div class="box8">
 			{% for table in tables4 %}
-				{{ titles4[loop.index]}}
+				<!-- {{ titles4[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
 
 			<div class="box9">
 			{% for table in tables2 %}
-				{{ titles2[loop.index]}}
+				<!-- {{ titles2[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div> 
@@ -235,7 +262,7 @@
 		<div class="wrapper2">
 			<div class="box21">
 			{% for table in tables3 %}
-				{{ titles3[loop.index]}}
+				<!-- {{ titles3[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
 			</div>
@@ -243,7 +270,15 @@
 			<div class='box22'>
 				<!-- <img src="{{ test3_graph }}", width="950", height="400"></img> -->
 <!-- 				<div id="chart"></div>
- -->			</div>
+
+ -->		
+ 				<div id="chart2"></div>
+
+			</div>
+
+			<div class='box23'>
+ 				<div id="chart3"></div>
+			</div>
 		</div>
 
 <!-- 
@@ -256,9 +291,28 @@
 	  data: {
 	    // url: "./newtest1.csv",
 	    url: "{{ url_for('static', filename='./newtest1.csv') }}",
+	    type: "bar"
+	  },
+
+	  bindto: "#chart"
+	});
+
+	var chart2 = bb.generate({
+	  data: {
+	    // url: "./newtest1.csv",
+	    url: "{{ url_for('static', filename='./newtest2.csv') }}",
+	    type: "bar"
+	  },
+	  bindto: "#chart2"
+	});
+
+	var chart3 = bb.generate({
+	  data: {
+	    // url: "./newtest1.csv",
+	    url: "{{ url_for('static', filename='./sapporo1.csv') }}",
 	    type: "line"
 	  },
-	  bindto: "#chart"
+	  bindto: "#chart3"
 	});
 	</script>
 </html>
