@@ -10,7 +10,7 @@ With FRANEE, people who are in the process of starting franchise business, could
 
 
 ## Members
-JANG DONG HYUN // github link: [https://github.com/SOMJANG] <br>  
+JANG DONG HYUN // github link: [https://github.com/SOMJANG]  
 HONG YOUNG WON // github link: [https://github.com/HongYoungWon] <br>
 YOO HYUN WOOK // github link: [https://github.com/itsmehank] <br>
 
