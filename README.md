@@ -10,4 +10,7 @@ JANG DONGHYUN,
 HONG YOUNGWON, 
 YOO HYUNWOOK
 
+### Project Date
+2019.09.29 ~
+
 
