@@ -277,3 +277,5 @@ def MultisearchAndMakeDataframe2(inputString):
 
 def testFunction():
     print("test")
+def testFunction2():
+    print("test2")
