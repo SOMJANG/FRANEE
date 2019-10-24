@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, validators
 import gonjung_chicken as gjck
+import run_keras_server as myModel
 # import pandas_highcharts.core
 import matplotlib.pyplot as plt
 import io
@@ -47,6 +48,11 @@ def hello():
         testChart2 = 'data:image/png;base64,{}'.format(graph_url2)
         testChart3 = gjck.makeStoreGraph(mydfs)
 
+        positive_df = myModel.positive_df
+
+        negative_df = myModel.negative_df
+
+        neutral_df = myModel.neutrality_df
 
         # testChart = pandas_highcharts.core.serialize(mydfs[2], render_to='my-chart', output_type='json')
 
@@ -64,7 +70,10 @@ def hello():
                                tables9=[mydfs[8].to_html(classes='data')], titles9=mydfs[8].columns.values,
                                tables10=[mydfs[9].to_html(classes='data')], titles10=mydfs[9].columns.values,
                                tables11=[mydfs[10].to_html(classes='data')], titles11=mydfs[10].columns.values,
-                               test_graph=testChart, test2_graph=testChart2, test3_graph=testChart3, json_test=testJsonData)#,
+                               test_graph=testChart, test2_graph=testChart2, test3_graph=testChart3, json_test=testJsonData,
+                               positive_article=[positive_df.to_html(classes='article_positive')],
+                               negative_article=[negative_df.to_html(classes='article_negative')],
+                               neutral_article=[neutral_df.to_html(classes='article_neutral')])#,
                                # graph=plt.show())
     return render_template('firstapp.html', form=form)
 
