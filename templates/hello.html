@@ -160,6 +160,21 @@
 				grid-column: 1 / 4;
 				grid-row: 3 / 4;
 			}
+
+			.box24 {
+				grid-column: 1 / 2;
+				grid-row: 4 / 8;
+			}
+
+			.box25 {
+				grid-column: 2 / 3;
+				grid-row: 4 / 8;
+			}
+
+			.box26 {
+				grid-column: 3 / 4;
+				grid-row: 4 / 8;
+			}
 		</style>
 		
 		<div class="wrapper">
@@ -279,6 +294,27 @@
 			<div class='box23'>
  				<div id="chart3"></div>
 			</div>
+
+			<div class="box24">
+			{% for table in positive_article %}
+				<!-- {{ titles2[loop.index]}} -->
+				{{ table|safe }}
+			{% endfor %}
+			</div> 
+
+			<div class="box25">
+			{% for table in neutral_article%}
+				<!-- {{ titles2[loop.index]}} -->
+				{{ table|safe }}
+			{% endfor %}
+			</div> 
+
+			<div class="box26">
+			{% for table in negative_article %}
+				<!-- {{ titles2[loop.index]}} -->
+				{{ table|safe }}
+			{% endfor %}
+			</div> 
 		</div>
 
 <!-- 
