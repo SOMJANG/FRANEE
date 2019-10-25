@@ -13,10 +13,11 @@ from threading import Thread
 # 1. 챗봇에 사용할 데이터 준비하기
 
 
-# test_data = pd.read_csv("./test_dataset_1007.csv")
+test_data = pd.read_csv("./test_dataset_1007.csv")
 
 
 def classification_article_pos_neg(test_data):
+
     train_data = pd.read_csv("./train_dataset_1007.csv")
 
     okt = Okt()
@@ -71,9 +72,9 @@ def classification_article_pos_neg(test_data):
     # original_labels = np.argmax(y_test, axis=1)
 
     titles = list(test_data['title'])
-    links = list(test_data['link'])
+    # links = list(test_data['link'])
 
-    mypredict_dic = {"title":titles, "link":links,"label":predict_labels}
+    mypredict_dic = {"title":titles,"label":predict_labels}
 
     myPredict_df = pd.DataFrame(mypredict_dic)
 
