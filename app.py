@@ -2,11 +2,10 @@ from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, validators
 import gonjung_chicken as gjck
 import run_keras_server as myModel
-# import pandas_highcharts.core
 import matplotlib.pyplot as plt
 import io
 import base64
-import json
+import get_article_titles as gat
 
 
 app = Flask(__name__) # 매개변수 __name__으로 새로운 플라스크 인스턴스를 초기화
@@ -26,6 +25,17 @@ def hello():
     if request.method == 'POST' and form.validate():
         name = request.form['sayhello']
         mydfs = gjck.searchAndMakeDataframe2(name)
+
+        my_articles = gat.getArticleTitle_100_df(name)
+
+        article_df = myModel.classification_article_pos_neg(my_articles)
+
+        positive_df = article_df[0]
+
+        negative_df = article_df[1]
+
+        neutral_df = article_df[2]
+
 
         img = io.BytesIO()
         mydfs[2].plot.bar()
@@ -48,13 +58,6 @@ def hello():
         testChart2 = 'data:image/png;base64,{}'.format(graph_url2)
         testChart3 = gjck.makeStoreGraph(mydfs)
 
-        positive_df = myModel.positive_df
-
-        negative_df = myModel.negative_df
-
-        neutral_df = myModel.neutrality_df
-
-        # testChart = pandas_highcharts.core.serialize(mydfs[2], render_to='my-chart', output_type='json')
 
         testJsonData = mydfs[1].to_json(orient='records')
         print(testJsonData)
