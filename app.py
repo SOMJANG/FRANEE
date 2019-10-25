@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, validators
 import gonjung_chicken as gjck
-import run_keras_server as myModel
 import matplotlib.pyplot as plt
 import io
+import run_keras_server as myModel
 import base64
 import get_article_titles as gat
 
@@ -35,6 +35,12 @@ def hello():
         negative_df = article_df[1]
 
         neutral_df = article_df[2]
+
+        # positive_df = myModel.positive_df
+        #
+        # negative_df = myModel.negative_df
+        #
+        # neutral_df = myModel.neutrality_df
 
 
         img = io.BytesIO()
