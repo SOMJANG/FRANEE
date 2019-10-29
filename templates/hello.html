@@ -22,71 +22,48 @@
 
 			body{
 			  /*background: #f2f2f2;*/
-			  font-family: 'Open Sans', sans-serif;
+			  font-family: '나눔바른펜';
 
 			}
-<!--			table { -->
-<!--				border-collapse: collapse; -->
-<!--				/*text-align: left; */-->
-<!--				font-size: small;-->
-<!--				line-height: 1.5; -->
-<!--				margin : 10px 5px;-->
-<!--			}-->
 			table {
 				width: 100%;
+				border-collapse: collapse; # 표(table) 테두리, 셀(td) 테두리 사이의 간격을 없앰
+				/*text-align: left; */
+				font-size: small;
+				font-family: '나눔바른펜';
+				line-height: 1.5;
+				margin : 10px 5px;
 			}
-			# 항목의 제목 부분
-			table td {
-				width: 150px;
-				border: 1px solid #ccc;
-			}
-
-			# 내용 table
 			table th {
-				boder: 1px solid #ccc; # 회색
-				width: 150px;
+				height: 70px;
+				padding: 10px;
 				font-weight: bold;
 				vertical-align: top;
-				background:#FFDEA9;
+				border: 1px solid #ABABAB;
+				background:#D1B2FF;
 			}
 
+			table td {
+				padding: 10px;
+				vertical-align: top;
+				border: 1px solid #ABABAB;
+				text-align: right;
+			}
 
-<!--			table td { -->
-<!--				width: 100px;-->
-<!--				padding: 10px; -->
-<!--				vertical-align: top; -->
-<!--				border: 1px solid #ccc; -->
-<!--				text-align: right;-->
-<!--			}-->
-<!--			table th { -->
-<!--				width: 150px; # 열 1칸당 너비-->
-<!--				padding: 10px; -->
-<!--				font-weight: bold; -->
-<!--				vertical-align: top; -->
-<!--				border: 1px solid #ccc; -->
-<!--				background:#FFDEA9;-->
-<!--			}-->
-
-
-			table.test1 th { 
-				width: 100px; 
-				padding: 10px; 
-				font-weight: bold; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
-				background:#FFDEA9;
+			table.test1 th {
+				width: 150px;
+				padding: 10px;
+				font-weight: bold;
+				vertical-align: top;
 			}
 
 			table.test1 td{
 				width: 300px;
 				height: 27px;
 				padding: 10px; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
+				vertical-align: top;
 				text-align: right;
 			}
-
-			
 
 			.wrapper {
 				display: grid;
