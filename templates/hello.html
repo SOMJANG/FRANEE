@@ -25,28 +25,48 @@
 			  font-family: 'Open Sans', sans-serif;
 
 			}
-			table { 
-				border-collapse: collapse; 
-				/*text-align: left; */
-				font-size: small;
-				line-height: 1.5; 
-				margin : 10px 5px;
+<!--			table { -->
+<!--				border-collapse: collapse; -->
+<!--				/*text-align: left; */-->
+<!--				font-size: small;-->
+<!--				line-height: 1.5; -->
+<!--				margin : 10px 5px;-->
+<!--			}-->
+			table {
+				width: 100%;
 			}
-			table th { 
-				width: 150px; 
-				padding: 10px; 
-				font-weight: bold; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
+			# 항목의 제목 부분
+			table td {
+				width: 150px;
+				border: 1px solid #ccc;
+			}
+
+			# 내용 table
+			table th {
+				boder: 1px solid #ccc; # 회색
+				width: 150px;
+				font-weight: bold;
+				vertical-align: top;
 				background:#FFDEA9;
 			}
-			table td { 
-				width: 200px; 
-				padding: 10px; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
-				text-align: right;
-			}
+
+
+<!--			table td { -->
+<!--				width: 100px;-->
+<!--				padding: 10px; -->
+<!--				vertical-align: top; -->
+<!--				border: 1px solid #ccc; -->
+<!--				text-align: right;-->
+<!--			}-->
+<!--			table th { -->
+<!--				width: 150px; # 열 1칸당 너비-->
+<!--				padding: 10px; -->
+<!--				font-weight: bold; -->
+<!--				vertical-align: top; -->
+<!--				border: 1px solid #ccc; -->
+<!--				background:#FFDEA9;-->
+<!--			}-->
+
 
 			table.test1 th { 
 				width: 100px; 
@@ -58,7 +78,7 @@
 			}
 
 			table.test1 td{
-				width: 400px; 
+				width: 300px;
 				height: 27px;
 				padding: 10px; 
 				vertical-align: top; 
@@ -67,23 +87,7 @@
 			}
 
 			
-			table.test2 th {
-				width: 100px;
-				padding: 10px;
-				font-weight: bold;
-				vertical-align: top;
-				border: 1px solid #ccc;
-				background:#FFDEA9;
-			}
 
-			table.test2 td{
-				width: 80px;
-				height: 27px;
-				padding: 10px;
-				vertical-align: top;
-				border: 1px solid #ccc;
-				text-align: right;
-			}
 			.wrapper {
 				display: grid;
 				grid-template-columns: repeat(3, 500px);
