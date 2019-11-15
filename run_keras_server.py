@@ -1,11 +1,8 @@
 from keras.preprocessing.sequence import pad_sequences
-from keras.preprocessing.text import Tokenizer
-# import keras.backend.tensorflow_backend as tb
-
 import pandas as pd
 import numpy as np
 from konlpy.tag import Okt
-from threading import Thread
+import pickle
 
 # tb._SYMBOLIC_SCOPE.value = False
 
@@ -17,19 +14,9 @@ test_data = pd.read_csv("./test_dataset_1007.csv")
 
 
 def classification_article_pos_neg(test_data):
-
-    train_data = pd.read_csv("./train_dataset_1007.csv")
-
     okt = Okt()
 
     stopwords = ['의', '가', '이', '은', '들', '는', '좀', '잘', '걍', '과', '도', '를', '으로', '자', '에', '와', '한', '하다']
-
-    X_train = []
-    for sentence in train_data['title']:
-        temp_X = []
-        temp_X = okt.morphs(sentence, stem=True)  # 토큰화
-        temp_X = [word for word in temp_X if not word in stopwords]  # 불용어 제거
-        X_train.append(temp_X)
 
     X_test = []
     # y_test = []
@@ -42,8 +29,9 @@ def classification_article_pos_neg(test_data):
 
     max_words = 35000
     max_len = 20
-    tokenizer = Tokenizer(num_words=max_words)
-    tokenizer.fit_on_texts(X_train)
+
+    with open('./tokenizer.pickle', 'rb') as handle:
+        tokenizer = pickle.load(handle)
     X_test = tokenizer.texts_to_sequences(X_test)
 
     # for i in range(len(test_data['label'])):
