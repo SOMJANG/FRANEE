@@ -16,12 +16,51 @@
 	</head>
 	<body>
 		<div><h1>{{ name }} </h1></div>
+		<div class="container">
+			<br>
+			<h3 class="result_title">"BHC를 소개합니다."</h3>
+			<div class="service_menu">
+				<span class="company_analysis">기업 소개</span>
+				<span class="news_analysis">뉴스 분석</span>
+				<span class="company_comparation">기업 비교</span>
+				<span class="industry_analysis">산업 분석</span>
+				<span class="country_analysis">지역 분석</span>
+				<span class="company_recommendation">기업 추천</span>
+			</div>
+		</div>
 
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 			body{
 				font-family: '나눔바른펜';
+			}
+			.container {
+    			margin:0 auto;
+    			max-width: 700px;
+    			overflow:hidden;
+    			padding-top: 50px;
+    			font-size: 16px;
+    			font-family:'나눔스퀘어';
+			}
+
+			.service_menu{
+   				margin:0 auto;
+    			height:40px;
+    			line-height:40px;
+    			text-align:center;
+			}
+
+			.service_menu span{
+    			width:80px;
+    			height:35px;
+    			padding:5px;
+    			padding-right:10px;
+    			padding-left:10px;
+    			background-color:black;
+    			color:white;
+    			border-radius:7px;
+    			margin-right:10px;
 			}
 			table {
 				width: 90%;
