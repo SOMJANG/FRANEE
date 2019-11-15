@@ -37,7 +37,7 @@ def makeCompanyInfoLink(inputString):
 def makeDataframeFromLink(link):
     dataframes_chicken = pd.read_html(link)
     make_df01 = makeCompanySummary(dataframes_chicken)
-    make_df02 = makeCompaySalesInfo(dataframes_chicken)
+    make_df02 = makeCompanySalesInfo(dataframes_chicken)
     make_df03 = makeCompanyBrunchNumInfo(dataframes_chicken)
     make_df04 = makeCompanyBrunchNumChangeInfo(dataframes_chicken)
     make_df05 = makeCompanyPastSalesInfo(dataframes_chicken)
@@ -98,7 +98,7 @@ def makeCompanySummary(dataframes_chicken):
     return data_company_info_1
 
 
-def makeCompaySalesInfo(dataframes_chicken):
+def makeCompanySalesInfo(dataframes_chicken):
     data0002 = dataframes_chicken[2].iloc[0:3, 1:7]
     index = list(dataframes_chicken[2].iloc[0:3, 0:1]['연도'])
     data0002.index = index
