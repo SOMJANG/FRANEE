@@ -21,15 +21,13 @@
 			@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 			body{
-			  /*background: #f2f2f2;*/
-			  font-family: '나눔바른펜';
-
+				font-family: '나눔바른펜';
 			}
-
 			table {
 				width: 90%;
+
 				padding: 0.1px;
-				border: #ccc 1px solid;
+				border: #f8f8f8 1px solid;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				border-radius: 5px;
@@ -54,7 +52,7 @@
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				border-radius: 5px;
-				}
+			}
 
 			table td {
 				font-weight: bold;
@@ -70,14 +68,6 @@
 				-moz-border-radius: 5px;
 				border-radius: 5px;
 			}
-
-<!--			th:nth-child(2n){-->
-<!--				background-color: #EAEAEA;-->
-<!--			}-->
-
-<!--			th:nth-child(2n+1){-->
-<!--				background-color: #D1B2FF;-->
-<!--			}-->
 
 			table.test1 th {
 				width: 150px;
@@ -96,13 +86,36 @@
 
 			.wrapper {
 				display: grid;
-				grid-template-columns: repeat(3, 450px);
-				grid-template-rows: repeat(4, 330px);
+				grid-template-columns: repeat(4, 150px);
+				grid-template-rows: repeat(1, 50px);
 				grid-row-gap: 1em;
 				grid-column-gap: 1em
 			}
 
 			.wrapper > div {
+				background: #FFFFFF;
+				padding: 1em;
+			}
+
+			.box30 {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+			}
+
+			.box31 {
+			    grid-column: 2 / 4;
+			    grid-row: 1 / 2;
+			}
+
+			.wrapper2 {
+				display: grid;
+				grid-template-columns: repeat(3, 400px);
+				grid-template-rows: repeat(4, 330px);
+				grid-row-gap: 1em;
+				grid-column-gap: 1em
+			}
+
+			.wrapper2 > div {
 				background: #f6f6f6;
 				padding: 1em;
 			}
@@ -157,7 +170,7 @@
 				grid-row: 7 / 8;
 			}*/
 
-			.wrapper2 {
+			.wrapper3 {
 				display: grid;
 				grid-template-columns: repeat(3, 270px);
 				grid-template-rows: repeat(8, 70px);
@@ -165,7 +178,7 @@
 				grid-column-gap: 1em
 			}
 
-			.wrapper2 > div {
+			.wrapper3 > div {
 				background: #f6f6f6;
 				padding: 1em;
 			}
@@ -201,6 +214,19 @@
 		</style>
 
 		<div class="wrapper">
+            <div class="box1">
+                    <img src="./static/image/logo.png">
+                    </img>
+			</div>
+
+            <div class="box2">
+                <img src="./static/image/menu.JPG">
+                </img>
+            </div>
+        </div>
+
+
+		<div class="wrapper2">
 			<div class="box1">
 			<!-- <div> -->
 			{% for table in tables %}
@@ -297,7 +323,7 @@
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		</div>
-		<div class="wrapper2">
+		<div class="wrapper3">
 			<div class="box21">
 			{% for table in tables3 %}
 				<!-- {{ titles3[loop.index]}} -->
