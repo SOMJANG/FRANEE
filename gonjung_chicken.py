@@ -18,7 +18,6 @@ dataIdx_dic = {"맘스터치": "70916", "BHC": "63110", "굽네치킨": "68742",
                "깐부치킨": "68508", "맥시칸치킨": "67269", "또봉이통닭": "66934", "지코바양념치킨": "69199", "디디치킨": "71598",
                "마파치킨": "66820", "훌랄라치킨": "62455", "오븐마루": "65757", "웰덤치킨": "61040"}
 
-
 def makeCompanyInfoLink(inputString):
     search_link_format = "http://franchise.ftc.go.kr/user/extra/main/62/firMst/view/jsp/LayOutPage.do?dataIdx="
     search_link_format2 = "&spage=1&srow=10&column=brd&search="

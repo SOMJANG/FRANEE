@@ -17,7 +17,7 @@ class HelloForm(Form):
 @app.route('/')
 def index():
     form = HelloForm(request.form)
-    return render_template('firstapp.html', form=form)
+    return render_template('FRANEE_firstpagehtml.html', form=form)
 
 @app.route('/hello', methods=['POST'])
 def hello():
@@ -84,7 +84,7 @@ def hello():
                                negative_article=[negative_df.to_html(classes='article_negative')],
                                neutral_article=[neutral_df.to_html(classes='article_neutral')])#,
                                # graph=plt.show())
-    return render_template('firstapp.html', form=form)
+    return render_template('firstapp2.html', form=form)
 
 
 if __name__ == '__main__':
