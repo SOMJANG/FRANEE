@@ -53,6 +53,28 @@ section{
     font-weight: bold;
     line-height: 2.8;
 }
+
+.btn {
+    text-decoration: none;
+    font-size: 20px;
+    font-color: black;
+    background-color: #FFFFFF;
+    color: black;
+    margin: 10px;
+    display: inline-block;
+}
+
+div#table00 {
+    background-color: white;
+	width: 1671px;
+	height: 130px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
  div#table01 {
     background-color: white;
 	width: 550px;
@@ -88,7 +110,19 @@ section{
 
  div#table04{
     background-color: white;
-	width: 1110px;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+
+  div#table05 {
+    background-color: white;
+	width: 550px;
 	height: 390px;
 	float: left;
 	margin: 5px;
@@ -107,6 +141,15 @@ section{
 	box-shadow: 2px 2px 4px dimgray;
 	border: 1px solid #F1F1F1;
  }
+
+div#sub_title00 {
+	background-color: #A9E2F3;
+	width: 1669px;
+	height: 55px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
 
  div#sub_title01 {
 	background-color: #A9E2F3;
@@ -136,7 +179,15 @@ section{
 }
 div#sub_title04 {
 	background-color: #A9E2F3;
-	width: 1108px;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+div#sub_title05 {
+	background-color: #A9E2F3;
+	width: 548px;
 	height: 60px;
 	float: left;
 	border-radius: 7px;
@@ -151,3 +202,4 @@ div#sub_title06 {
 	border-radius: 7px;
 	border: 1px solid #F1F1F1;
 }
+

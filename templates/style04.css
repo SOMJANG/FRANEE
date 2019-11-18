@@ -88,7 +88,18 @@ section{
 
  div#table04{
     background-color: white;
-	width: 1110px;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+  div#table05{
+    background-color: white;
+	width: 550px;
 	height: 390px;
 	float: left;
 	margin: 5px;
@@ -136,7 +147,16 @@ section{
 }
 div#sub_title04 {
 	background-color: #A9E2F3;
-	width: 1108px;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+
+div#sub_title05 {
+	background-color: #A9E2F3;
+	width: 548px;
 	height: 60px;
 	float: left;
 	border-radius: 7px;
