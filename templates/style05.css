@@ -91,7 +91,7 @@ body {
     outline: none;
     opacity: 1;
     margin-left: -50px;
-}
+  }
 
 .container:hover button.icon:hover{
     background: #A9E2F3;
@@ -102,43 +102,46 @@ section{
     font-weight: bold;
     line-height: 2.8;
 }
+
+.btn {
+    text-decoration: none;
+    font-size: 20px;
+    font-color: black;
+    background-color: #FFFFFF;
+    color: black;
+    margin: 10px;
+    display: inline-block;
+}
+
+.btn2 {
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-color: black;
+    background-color: #CEECF5;
+    color: black;
+    margin: 10px;
+    width: 100px;
+    border-radius: 13px;
+    display: inline-block;
+}
+
+div#table00 {
+    background-color: white;
+	width: 1671px;
+	height: 130px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
  div#table01 {
     background-color: white;
-	width: 550px;
-	height: 390px;
-	float: left;
-	margin: 5px;
-	border-radius: 7px;
-	box-shadow: 2px 2px 4px dimgray;
-	border: 1px solid #F1F1F1;
- }
-
-  div#table02 {
-    background-color: white;
-	width: 550px;
-	height: 390px;
-	float: left;
-	margin: 5px;
-	border-radius: 7px;
-	box-shadow: 2px 2px 4px dimgray;
-	border: 1px solid #F1F1F1;
- }
-
-  div#table03{
-    background-color: white;
-	width: 550px;
-	height: 390px;
-	float: left;
-	margin: 5px;
-	border-radius: 7px;
-	box-shadow: 2px 2px 4px dimgray;
-	border: 1px solid #F1F1F1;
- }
-
- div#table04{
-    background-color: white;
 	width: 1110px;
-	height: 390px;
+	height: 790px;
 	float: left;
 	margin: 5px;
 	border-radius: 7px;
@@ -146,7 +149,7 @@ section{
 	border: 1px solid #F1F1F1;
  }
 
-  div#table06{
+ div#table02 {
     background-color: white;
 	width: 550px;
 	height: 390px;
@@ -157,10 +160,30 @@ section{
 	border: 1px solid #F1F1F1;
  }
 
- div#sub_title01 {
+ div#table03 {
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+div#sub_title00 {
 	background-color: #A9E2F3;
-	width: 548px;
-	height: 60px;
+	width: 1669px;
+	height: 55px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+
+div#sub_title01 {
+	background-color: #A9E2F3;
+	width: 1108px;
+	height: 55px;
 	float: left;
 	border-radius: 7px;
 	border: 1px solid #F1F1F1;
@@ -176,23 +199,6 @@ section{
 }
 
  div#sub_title03 {
-	background-color: #A9E2F3;
-	width: 548px;
-	height: 60px;
-	float: left;
-	border-radius: 7px;
-	border: 1px solid #F1F1F1;
-}
-div#sub_title04 {
-	background-color: #A9E2F3;
-	width: 1108px;
-	height: 60px;
-	float: left;
-	border-radius: 7px;
-	border: 1px solid #F1F1F1;
-}
-
-div#sub_title06 {
 	background-color: #A9E2F3;
 	width: 548px;
 	height: 60px;
