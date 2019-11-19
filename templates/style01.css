@@ -34,12 +34,16 @@ body {
   white-space: nowrap;
 }
 
+.logo{
+    margin: 0px 50px;
+}
+
 .container input#search{
   width: 300px;
   height: 50px;
   background: #EFF8FB;
   border: none;
-  font-size: 10pt;
+  font-size: 12pt;
   float: left;
   color: #2B303B;
   padding-left: 15px;
@@ -87,11 +91,11 @@ body {
   transition: all .55s ease;
 }
 
-.container:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+.container:hover button.icon, .container:active button.icon, .container:focus button.icon{
     outline: none;
     opacity: 1;
     margin-left: -50px;
-}
+  }
 
 .container:hover button.icon:hover{
     background: #A9E2F3;
