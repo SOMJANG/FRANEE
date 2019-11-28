@@ -1,0 +1,239 @@
+*{
+	margin: 0px auto;
+	padding: 0px auto;
+	box-sizing: border-box;
+}
+
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: #FFFFFF;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+body {
+	background-color: #f2f2f2;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.links {
+	display: flex;
+	justify-content: space-around;
+}
+
+.links li {
+	list-style: none;
+}
+
+.logo{
+    margin: 0px 50px;
+}
+
+.container{
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.container input#search{
+  width: 300px;
+  height: 50px;
+  background: #EFF8FB;
+  border: none;
+  font-size: 12pt;
+  float: left;
+  color: #2B303B;
+  padding-left: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.container input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+
+.container input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;
+}
+
+.container input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;
+}
+
+.container input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+
+.container button.icon{
+  -webkit-border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -moz-border-radius-bottomright: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+  border: none;
+  background: #A9E2F3;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.container:hover button.icon, .container:active button.icon, .container:focus button.icon{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+
+.container:hover button.icon:hover{
+    background: #A9E2F3;
+}
+
+.btn {
+    width: 230px;
+    height: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    font-color: black;
+    background-color: #FFFFFF;
+    color: black;
+    margin: 10px;
+    display: inline-block;
+}
+
+section{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 3;
+}
+ div#table01 {
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+  div#table02 {
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+  div#table03{
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+ div#table04{
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+   div#table05{
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+  div#table06{
+    background-color: white;
+	width: 550px;
+	height: 390px;
+	float: left;
+	margin: 5px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px dimgray;
+	border: 1px solid #F1F1F1;
+ }
+
+ div#sub_title01 {
+	background-color: #A9E2F3;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+
+ div#sub_title02 {
+	background-color: #A9E2F3;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+
+ div#sub_title03 {
+	background-color: #A9E2F3;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+div#sub_title04 {
+	background-color: #A9E2F3;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+
+div#sub_title05 {
+	background-color: #A9E2F3;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}
+
+div#sub_title06 {
+	background-color: #A9E2F3;
+	width: 548px;
+	height: 60px;
+	float: left;
+	border-radius: 7px;
+	border: 1px solid #F1F1F1;
+}

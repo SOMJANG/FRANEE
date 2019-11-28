@@ -411,8 +411,11 @@
 	<script>
 	var chart = bb.generate({
 	  data: {
-	    // url: "./newtest1.csv",
-	    url: "{{ url_for('static', filename='./newtest1.csv') }}",
+	  	columns: [	
+			{{ money_info[0] }},
+			{{ money_info[1] }},
+			{{ money_info[2] }}
+	    ],
 	    type: "bar"
 	  },
 	  axis: {
