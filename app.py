@@ -11,7 +11,7 @@ import get_article_titles as gat
 
 app = Flask(__name__) # 매개변수 __name__으로 새로운 플라스크 인스턴스를 초기화
 # 현재 디레터리와 같은 위치에서 HTML템플릿(templates) 폴더를 찾습니다.
-company=''
+
 class HelloForm(Form):
     sayhello = TextAreaField('', [validators.DataRequired()])
 
@@ -26,8 +26,9 @@ def hello():
     form = HelloForm(request.form)
     if request.method == 'POST' and form.validate():
         name = request.form['sayhello']
-        company=request.form['sayhello']
-        # mydfs = gjck.searchAndMakeDataframe2(name)
+        global company
+
+        company = request.form['sayhello']
 
         summary_info = mydb.getSummaryInfoFromSqlite3DB(name)
 
@@ -39,9 +40,6 @@ def hello():
 
         sales_info = mydb.getSalesInfoFromSqlite3DB(summary_info[2])
 
-
-        # testJsonData = mydfs[1].to_json(orient='records')
-        # print(testJsonData)
         return render_template('FRANEE_firstpagehtml.html', name=name, summary_info=summary_info, branch_info=branch_info, money_info=money_info, finan_info=finan_info, sales_info=sales_info)
     return render_template('firstapp2.html', form=form)
 
