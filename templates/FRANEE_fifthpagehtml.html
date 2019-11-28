@@ -8,41 +8,40 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style05.css">
+	<link rel="stylesheet" href="{{url_for('static', filename='style05.css')}}">
 	<title>FRANEE</title>
 </head>
 
 <body>
 	<header>
 		<div class="logo">
-			<img src="test.png" width="190x" height="55px" />
+			<a href="/"><img src="{{url_for('static', filename='test.png')}}" width="190x" height="55px" /></a>
 		</div>
-
 		<div class="box">
 			<div class="container">
-				<input type="search" id="search" placeholder="검색할 기업명을 입력해주세요"/>
+				<input type="search" id="search" placeholder="{{ name }}"/>
                 <button class="icon"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 
 		<ul class="links">
 			<li>
-				<a href="#"><img src="menu01.png" width="65%" /></a>
+				<a href="/hello"><img src="{{url_for('static', filename='menu01.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu02.png" width="65%" /></a>
+				<a href="/secondpage"><img src="{{url_for('static', filename='menu02.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu03.png" width="65%" /></a>
+				<a href="/thirdpage"><img src="{{url_for('static', filename='menu03.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu04.png" width="65%" /></a>
+				<a href="/fourthpage"><img src="{{url_for('static', filename='menu04.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu05.png" width="65%" /></a>
+				<a href="/fifthpage"><img src="{{url_for('static', filename='menu05.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu06.png" width="65%" /></a>
+				<a href="/sixthpage"><img src="{{url_for('static', filename='menu06.png')}}" width="65%" /></a>
 			</li>
 		</ul>
 	</header>

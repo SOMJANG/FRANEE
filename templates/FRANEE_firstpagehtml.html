@@ -8,58 +8,154 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style01.css">
+	<link rel="stylesheet" href="{{url_for('static', filename='style01.css')}}">
+	
+	
+	<script src="http://d3js.org/d3.v3.min.js" charset="UTF-8"></script>
+	<script src="{{url_for('static', filename='d3.layout.cloud.js')}}"></script>
+
+
+	<script src="https://d3js.org/d3.v5.min.js" charset="UTF-8"></script>
+	<!-- Step 2) Load billboard.js with style -->
+	<script src="{{url_for('static', filename='./billboard.js')}}"></script>
+
+	<!-- Load with base style -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='./billboard.css') }}">
+
+
 	<title>FRANEE</title>
 </head>
 
 <body>
 	<header>
 		<div class="logo">
-			<img src="test.png" width="190x" height="55px" />
+			<a href="/"><img src="{{url_for('static', filename='test.png')}}" width="190x" height="55px" /></a>
 		</div>
 		<div class="box">
 			<div class="container">
-				<input type="search" id="search" placeholder="검색할 기업명을 입력해주세요"/>
+				<input type="search" id="search" placeholder="{{ name }}"/>
                 <button class="icon"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 
 		<ul class="links">
 			<li>
-				<a href="#"><img src="menu01.png" width="65%" /></a>
+				<a href="/hello"><img src="{{url_for('static', filename='menu01.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu02.png" width="65%" /></a>
+				<a href="/secondpage"><img src="{{url_for('static', filename='menu02.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu03.png" width="65%" /></a>
+				<a href="/thirdpage"><img src="{{url_for('static', filename='menu03.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu04.png" width="65%" /></a>
+				<a href="/fourthpage"><img src="{{url_for('static', filename='menu04.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu05.png" width="65%" /></a>
+				<a href="/fifthpage"><img src="{{url_for('static', filename='menu05.png')}}" width="65%" /></a>
 			</li>
 			<li>
-				<a href="#"><img src="menu06.png" width="65%" /></a>
+				<a href="/sixthpage"><img src="{{url_for('static', filename='menu06.png')}}" width="65%" /></a>
 			</li>
 		</ul>
 	</header>
-
+<!-- 상호, 영업표지, 대표자, 업종, 법인설립등기일, 사업자등록일, 대표번호, 대표팩스 번호, 등록번호, 최초등록일, 최종등록일, 주소, 사업자유형, 법인등록번호, 사업자등록번호 -->
     <section>
         <div id="table01">
             <div id="sub_title01">
                 <h4>&nbsp&nbsp 기업 개요</h4>
             </div>
+            <div class="enter_summary">
+            	<table class="summary_table">
+            		<tbody>
+            			<tr>
+            				<th> 상호 </th>
+            				<td> {{ summary_info[1] }} </td>
+
+						</tr>
+						<tr>
+            				<th> 영업표지 </th>
+            				<td> {{ summary_info[2] }} </td>
+						</tr>
+						<tr>
+            				<th> 대표자 </th>
+            				<td> {{ summary_info[3] }} </td>
+						</tr>
+						<tr>
+            				<th> 업종 </th>
+            				<td> {{ summary_info[4] }} </td>
+						</tr>
+						<tr>
+            				<th> 사업자 유형 </th>
+            				<td> {{ summary_info[13] }} </td>
+						</tr>
+						<tr>
+            				<th> 법인등록번호 </th>
+            				<td> {{ summary_info[14] }} </td>
+						</tr>
+						<tr>
+            				<th> 사업자등록번호 </th>
+            				<td> {{ summary_info[15] }} </td>
+						</tr>
+						<tr>
+            				<th> 대표전화번호 </th>
+            				<td> {{ summary_info[7] }} </td>
+						</tr>
+						<tr>
+            				<th> 주소 </th>
+            				<td> {{ summary_info[12] }} </td>
+						</tr>
+            		</tbody>
+            	</table>
+            </div>
         </div>
+
+        <!-- 가입비(가맹비), 교육비, 보증금, 기타비용, 합계, 영업표지, (3.3m²)당 인테리어 비용, 기준점포면적(m²), 인테리어 비용 -->
         <div id="table02">
             <div id="sub_title02">
                 <h4>&nbsp&nbsp 재무 정보</h4>
+            </div>
+            <div>
+				<div id="barChart"></div>
             </div>
         </div>
         <div id="table03">
             <div id="sub_title03">
                 <h4>&nbsp&nbsp 가맹 점주 부담금/월 평균 매출액</h4>
+            </div>
+            <div class="enter_moneyinfo">
+            	<table class="money_table">
+            		<tbody>
+            			<tr>
+            				<th> 가입비 </th>
+            				<td> {{ money_info[1] }} </td>
+            				<th> 월 평균 매출액 </th>
+            				<td> {{ money_info[1] }} </td>
+						</tr>
+						<tr>
+            				<th> 교육비 </th>
+            				<td> {{ money_info[2] }} </td>
+						</tr>
+						<tr>
+            				<th> 보증금 </th>
+            				<td> {{ money_info[3] }} </td>
+						</tr>
+						<tr>
+            				<th> 기타비용 </th>
+            				<td> {{ money_info[4] }} </td>
+						</tr>
+						<tr>
+            				<th> 인테리어비용 </th>
+            				<td> {{ money_info[9] }} </td>
+            				<th> 기준점포면적(m²) </th>
+            				<td> {{ money_info[8]}} </td>
+						</tr>
+						<tr>
+            				<th> 합계 </th>
+            				<td> {{ money_info[5] }} </td>
+						</tr>
+            		</tbody>
+            	</table>
             </div>
         </div>
     </section>
@@ -69,13 +165,125 @@
             <div id="sub_title04">
                 <h4>&nbsp&nbsp SNS키워드(인스타그램)</h4>
             </div>
+			  <div id="cloud">
+			  	<img src="{{url_for('static', filename='치킨.png')}}" width="800px" height="250px" />
+			  </div>
+			  <!-- <script type="text/javascript">
+			    var weight = 3,   // change me
+			        width = 1100,
+			        height = 350;
+			    var fill = d3.scale.category20();
+			    d3.csv("{{url_for('static', filename='네네치킨.csv')}}", function(d) {
+			        return {
+			          text: d.word,
+			          size: +d.freq*weight
+			        }
+			      },
+			      function(data) {
+			        d3.layout.cloud().size([width, height]).words(data)
+			          //.rotate(function() { return ~~(Math.random() * 2) * 90; })
+			          .rotate(0)
+			          .font("Impact")
+			          .fontSize(function(d) { return d.size; })
+			          .on("end", draw)
+			          .start();
+			        function draw(words) {
+			          d3.select("#cloud").append("svg")
+			              .attr("width", width)
+			              .attr("height", height)
+			            .append("g")
+			              .attr("transform", "translate(" + width/2 + "," + height/2 + ")")
+			            .selectAll("text")
+			              .data(words)
+			            .enter().append("text")
+			              .style("font-size", function(d) { return d.size + "px"; })
+			              .style("font-family", "Impact")
+			              .style("fill", function(d, i) { return fill(i); })
+			              .attr("text-anchor", "middle")
+			              .attr("transform", function(d) {
+			                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+			              })
+			            .text(function(d) { return d.text; });
+			        }
+			      });
+			  </script> -->
         </div>
         <div id="table06">
             <div id="sub_title06">
                 <h4>&nbsp&nbsp 가맹점 변동 현황</h4>
             </div>
+            <div>
+            	<div id="lineChart"></div>
+            </div>
         </div>
     </section>
 </body>
+
+<script>
+	var chart = bb.generate({
+	  data: {
+	    columns: [
+		["2016년", {{ finan_info[0][2] }} , {{ finan_info[0][3] }}, {{ finan_info[0][5] }}, {{ finan_info[0][6] }}, {{ finan_info[0][7] }}, {{ finan_info[0][8] }}],
+		["2017년", {{ finan_info[1][2] }} , {{ finan_info[1][3] }}, {{ finan_info[1][5] }}, {{ finan_info[1][6] }}, {{ finan_info[1][7] }}, {{ finan_info[1][8] }}],
+		["2018년", {{ finan_info[2][2] }} , {{ finan_info[2][3] }}, {{ finan_info[2][5] }}, {{ finan_info[2][6] }}, {{ finan_info[2][7] }}, {{ finan_info[2][8] }}]
+	    ],
+	    type: "bar"
+	  },
+	  axis: {
+		  x: {
+		  type: "category",
+		  categories: [
+		    "자산",
+		    "부채",
+		    "자본",
+		    "매출액",
+		    "영업이익",
+		    "당기순이익",
+		   ]
+		}
+	  },
+	  bar: {
+	    width: {
+	      ratio: 0.5
+	    }
+	  },
+	  bindto: "#barChart"
+	});
+</script>
+
+<script>
+	var chart = bb.generate({
+	  data: {
+	    columns: [
+		["가맹점 수", {{ branch_info[0][2] }} , {{ branch_info[1][2] }}, {{ branch_info[2][2] }} ],
+		["직영점 수", {{ branch_info[0][3] }} , {{ branch_info[1][3] }}, {{ branch_info[2][3] }} ],
+		["신규개점", {{ branch_info[0][5] }} , {{ branch_info[1][5] }}, {{ branch_info[2][5] }} ],
+		["계약종료", {{ branch_info[0][6] }} , {{ branch_info[1][6] }}, {{ branch_info[2][6] }} ],
+		["계약해지", {{ branch_info[0][7] }} , {{ branch_info[1][7] }}, {{ branch_info[2][7] }} ],
+		["명의변경", {{ branch_info[0][8] }} , {{ branch_info[1][8] }}, {{ branch_info[2][8] }} ]
+	    ],
+	    type: "bar"
+	  },
+	  axis: {
+		  x: {
+		  type: "category",
+		  categories: [
+		    "2016년",
+		    "2017년",
+		    "2018년",
+		   ]
+		}
+	  },
+
+	  bar: {
+	    width: {
+	      ratio: 0.5
+	    }
+	  },
+	  bindto: "#lineChart"
+	});
+
+	chart.transform('line', "가맹점 수");
+</script>
 
 </html>
