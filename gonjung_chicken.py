@@ -18,7 +18,6 @@ dataIdx_dic = {"맘스터치": "70916", "BHC": "63110", "굽네치킨": "68742",
                "깐부치킨": "68508", "맥시칸치킨": "67269", "또봉이통닭": "66934", "지코바양념치킨": "69199", "디디치킨": "71598",
                "마파치킨": "66820", "훌랄라치킨": "62455", "오븐마루": "65757", "웰덤치킨": "61040"}
 
-
 def makeCompanyInfoLink(inputString):
     search_link_format = "http://franchise.ftc.go.kr/user/extra/main/62/firMst/view/jsp/LayOutPage.do?dataIdx="
     search_link_format2 = "&spage=1&srow=10&column=brd&search="
@@ -37,7 +36,7 @@ def makeCompanyInfoLink(inputString):
 def makeDataframeFromLink(link):
     dataframes_chicken = pd.read_html(link)
     make_df01 = makeCompanySummary(dataframes_chicken)
-    make_df02 = makeCompaySalesInfo(dataframes_chicken)
+    make_df02 = makeCompanySalesInfo(dataframes_chicken)
     make_df03 = makeCompanyBrunchNumInfo(dataframes_chicken)
     make_df04 = makeCompanyBrunchNumChangeInfo(dataframes_chicken)
     make_df05 = makeCompanyPastSalesInfo(dataframes_chicken)
@@ -98,7 +97,7 @@ def makeCompanySummary(dataframes_chicken):
     return data_company_info_1
 
 
-def makeCompaySalesInfo(dataframes_chicken):
+def makeCompanySalesInfo(dataframes_chicken):
     data0002 = dataframes_chicken[2].iloc[0:3, 1:7]
     index = list(dataframes_chicken[2].iloc[0:3, 0:1]['연도'])
     data0002.index = index
@@ -281,3 +280,6 @@ def testFunction2():
     print("test2")
 def testFunction3():
     print("test3")
+
+def testFunction4():
+    print("test")

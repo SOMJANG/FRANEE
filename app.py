@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, validators
 import gonjung_chicken as gjck
-# import pandas_highcharts.core
 import matplotlib.pyplot as plt
 import io
+import run_keras_server as myModel
 import base64
-import json
+import get_article_titles as gat
 
 
 app = Flask(__name__) # 매개변수 __name__으로 새로운 플라스크 인스턴스를 초기화
@@ -17,7 +17,7 @@ class HelloForm(Form):
 @app.route('/')
 def index():
     form = HelloForm(request.form)
-    return render_template('firstapp.html', form=form)
+    return render_template('FRANEE_firstpagehtml.html', form=form)
 
 @app.route('/hello', methods=['POST'])
 def hello():
@@ -25,6 +25,23 @@ def hello():
     if request.method == 'POST' and form.validate():
         name = request.form['sayhello']
         mydfs = gjck.searchAndMakeDataframe2(name)
+
+        my_articles = gat.getArticleTitle_100_df(name)
+
+        article_df = myModel.classification_article_pos_neg(my_articles)
+
+        positive_df = article_df[0]
+
+        negative_df = article_df[1]
+
+        neutral_df = article_df[2]
+
+        # positive_df = myModel.positive_df
+        #
+        # negative_df = myModel.negative_df
+        #
+        # neutral_df = myModel.neutrality_df
+
 
         img = io.BytesIO()
         mydfs[2].plot.bar()
@@ -48,8 +65,6 @@ def hello():
         testChart3 = gjck.makeStoreGraph(mydfs)
 
 
-        # testChart = pandas_highcharts.core.serialize(mydfs[2], render_to='my-chart', output_type='json')
-
         testJsonData = mydfs[1].to_json(orient='records')
         print(testJsonData)
         return render_template('hello.html', name=name,
@@ -64,9 +79,12 @@ def hello():
                                tables9=[mydfs[8].to_html(classes='data')], titles9=mydfs[8].columns.values,
                                tables10=[mydfs[9].to_html(classes='data')], titles10=mydfs[9].columns.values,
                                tables11=[mydfs[10].to_html(classes='data')], titles11=mydfs[10].columns.values,
-                               test_graph=testChart, test2_graph=testChart2, test3_graph=testChart3, json_test=testJsonData)#,
+                               test_graph=testChart, test2_graph=testChart2, test3_graph=testChart3, json_test=testJsonData,
+                               positive_article=[positive_df.to_html(classes='article_positive')],
+                               negative_article=[negative_df.to_html(classes='article_negative')],
+                               neutral_article=[neutral_df.to_html(classes='article_neutral')])#,
                                # graph=plt.show())
-    return render_template('firstapp.html', form=form)
+    return render_template('firstapp2.html', form=form)
 
 
 if __name__ == '__main__':

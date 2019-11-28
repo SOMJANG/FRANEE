@@ -16,133 +16,208 @@
 	</head>
 	<body>
 		<div><h1>{{ name }} </h1></div>
+		<div class="container">
+			<br>
+			<h3 class="result_title">"BHC를 소개합니다."</h3>
+			<div class="service_menu">
+				<span class="company_analysis">기업 소개</span>
+				<span class="news_analysis">뉴스 분석</span>
+				<span class="company_comparation">기업 비교</span>
+				<span class="industry_analysis">산업 분석</span>
+				<span class="country_analysis">지역 분석</span>
+				<span class="company_recommendation">기업 추천</span>
+			</div>
+		</div>
 
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 			body{
-			  /*background: #f2f2f2;*/
-			  font-family: 'Open Sans', sans-serif;
+				font-family: '나눔바른펜';
+			}
+			.container {
+    			margin:0 auto;
+    			max-width: 700px;
+    			overflow:hidden;
+    			padding-top: 50px;
+    			font-size: 16px;
+    			font-family:'나눔스퀘어';
+			}
 
+			.service_menu{
+   				margin:0 auto;
+    			height:40px;
+    			line-height:40px;
+    			text-align:center;
 			}
-			table { 
-				border-collapse: collapse; 
-				/*text-align: left; */
-				font-size: small;
-				line-height: 1.5; 
-				margin : 10px 5px;
+
+			.service_menu span{
+    			width:80px;
+    			height:35px;
+    			padding:5px;
+    			padding-right:10px;
+    			padding-left:10px;
+    			background-color:black;
+    			color:white;
+    			border-radius:7px;
+    			margin-right:10px;
 			}
-			table th { 
-				width: 150px; 
-				padding: 10px; 
-				font-weight: bold; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
-				background:#FFDEA9;
+			table {
+				width: 90%;
+
+				padding: 0.1px;
+				border: #f8f8f8 1px solid;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				font-size: 15px;
+				text-shadow: 1px 1px 2px #f8f8f8;
+				font-family: '나눔고딕';
+				line-height: 2.3;
+				-webkit-box-shadow: 0 1px 2px #d1d1d1;
+				box-shadow: 0 1px 2px #d1d1d1;
 			}
-			table td { 
-				width: 200px; 
-				padding: 10px; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
+
+			table th {
+				font-weight: bold;
+				vertical-align: top;
+
+				border-top: 1px solid #9DCFFF;
+				border-bottom: 1px solid #9DCFFF;
+				background: #9DCFFF;
+				border-left: 1px solid #9DCFFF;
+				border-right: 1px solid #9DCFFF;
+
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+
+			table td {
+				font-weight: bold;
+				vertical-align: top;
+				border-top: 1px solid #FFFFFF;
+				border-bottom: 1px solid #FFFFFF;
+				background: #f8f8f8;
+				border-right: 1px solid #FFFFFF;
+				border-left: 1px solid #FFFFFF;
 				text-align: right;
+
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
 			}
 
-			table.test1 th { 
-				width: 100px; 
-				padding: 10px; 
-				font-weight: bold; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
-				background:#FFDEA9;
+			table.test1 th {
+				width: 150px;
+				padding: 10px;
+				font-weight: bold;
+				vertical-align: top;
 			}
 
 			table.test1 td{
-				width: 400px; 
-				height: 27px;
-				padding: 10px; 
-				vertical-align: top; 
-				border: 1px solid #ccc; 
+				width: 300px;
+				height: 21px;
+				padding: 10px;
+				vertical-align: top;
 				text-align: right;
 			}
 
-			
-			.test2 {
-				font-weight: bold;
-
-			}
 			.wrapper {
 				display: grid;
-				grid-template-columns: repeat(3, 500px);
-				grid-template-rows: repeat(4, 350px);
+				grid-template-columns: repeat(4, 150px);
+				grid-template-rows: repeat(1, 50px);
 				grid-row-gap: 1em;
 				grid-column-gap: 1em
 			}
 
 			.wrapper > div {
-				background: #f6f6f6;
+				background: #FFFFFF;
 				padding: 1em;
 			}
 
-			.box1 {
+			.box30 {
 				grid-column: 1 / 2;
-				grid-row: 1 / 3;
-			}
-			.box2 {
-				grid-column: 2 / 3;
 				grid-row: 1 / 2;
-			}
-			.box3 {
-				grid-column: 3 / 4;
-				grid-row: 1 / 2;
-			}
-			.box4 {
-				grid-column: 2 / 3;
-				grid-row: 2 / 3;
 			}
 
-			.box5 {
-				grid-column: 3 / 4;
-				grid-row: 2 / 3;
+			.box31 {
+			    grid-column: 2 / 4;
+			    grid-row: 1 / 2;
 			}
-			.box6 {
-				grid-column: 2 / 3;
-				grid-row: 3 / 4;
-			}
-			.box7 {
-				grid-column: 3 / 4;
-				grid-row: 3 / 4;
-			}
-			.box8 {
-				grid-column: 1 / 2;
-				grid-row: 3 / 4;
-			}
-			.box9 {
-				grid-column: 1 / 2;
-				grid-row: 4 / 5;
-			}
-			.box10 {
-				grid-column: 2 / 4;
-				grid-row: 4 / 5;
-			}
-/*			.box8 {
-				grid-column: 1 / 4;
-				grid-row: 6 / 7;
-			}
-			.box9 {
-				grid-column: 1 / 4;
-				grid-row: 7 / 8;
-			}*/
 
 			.wrapper2 {
 				display: grid;
-				grid-template-columns: repeat(3, 500px);
-				grid-template-rows: repeat(8, 450px);
+				grid-template-columns: repeat(3, 400px);
+				grid-template-rows: repeat(4, 330px);
 				grid-row-gap: 1em;
 				grid-column-gap: 1em
 			}
 
 			.wrapper2 > div {
+				background: #f6f6f6;
+				padding: 1em;
+			}
+
+			.box1 { # 기업개요
+				grid-column: 1 / 2;
+				grid-row: 1 / 3;
+			}
+
+			.box2 { # 가맹점주 부담금(천원)
+				grid-column: 2 / 3;
+				grid-row: 1 / 2;
+			}
+			.box3 { # 계약기간
+				grid-column: 3 / 4;
+				grid-row: 1 / 2;
+			}
+			.box4 { # 인테리어(천원)
+				grid-column: 2 / 3;
+				grid-row: 2 / 3;
+			}
+			.box5 { # 임원/직원 수
+				grid-column: 3 / 4;
+				grid-row: 2 / 3;
+			}
+			.box6 { # 최근 3년간 법 위반사실
+				grid-column: 2 / 3;
+				grid-row: 3 / 4;
+			}
+			.box7 { # 점포 수
+				grid-column: 3 / 4;
+				grid-row: 3 / 4;
+			}
+			.box8 { # 광고 정보
+				grid-column: 1 / 2;
+				grid-row: 4 / 5;
+			}
+<!--			.box9 { # 영업 이익-->
+<!--				grid-column: 1 / 2;-->
+<!--				grid-row: 4 / 5;-->
+<!--			}-->
+			.box10 { # 영업 이익 그래프
+				grid-column: 2 / 4;
+				grid-row: 4 / 5;
+			}
+/*			.box8 { # 지역별 점포수
+				grid-column: 1 / 4;
+				grid-row: 6 / 7;
+			}
+			.box9 { # 지역별 점포수 그래프
+				grid-column: 1 / 4;
+				grid-row: 7 / 8;
+			}*/
+
+			.wrapper3 {
+				display: grid;
+				grid-template-columns: repeat(3, 270px);
+				grid-template-rows: repeat(8, 70px);
+				grid-row-gap: 1em;
+				grid-column-gap: 1em
+			}
+
+			.wrapper3 > div {
 				background: #f6f6f6;
 				padding: 1em;
 			}
@@ -160,9 +235,37 @@
 				grid-column: 1 / 4;
 				grid-row: 3 / 4;
 			}
+
+			.box24 {
+				grid-column: 1 / 2;
+				grid-row: 4 / 8;
+			}
+
+			.box25 {
+				grid-column: 2 / 3;
+				grid-row: 4 / 8;
+			}
+
+			.box26 {
+				grid-column: 3 / 4;
+				grid-row: 4 / 8;
+			}
 		</style>
-		
+
 		<div class="wrapper">
+            <div class="box1">
+                    <img src="./static/image/logo.png">
+                    </img>
+			</div>
+
+            <div class="box2">
+                <img src="./static/image/menu.JPG">
+                </img>
+            </div>
+        </div>
+
+
+		<div class="wrapper2">
 			<div class="box1">
 			<!-- <div> -->
 			{% for table in tables %}
@@ -170,7 +273,7 @@
 				{{ table|safe }}
 			{% endfor %}
 			</div>
-			
+
 			<!-- <div> -->
 			<div class="box2">
 			{% for table in tables7 %}
@@ -195,7 +298,7 @@
 				{{ table|safe }}
 			{% endfor %}
 			</div>
-			
+
 			<!-- <div> -->
 			<div class="box5">
 			{% for table in tables10 %}
@@ -231,7 +334,7 @@
 				<!-- {{ titles2[loop.index]}} -->
 				{{ table|safe }}
 			{% endfor %}
-			</div> 
+			</div>
 
 
 			<div class='box10'>
@@ -242,8 +345,8 @@
 
 
 
-			
-<!-- 
+
+<!--
 			<div class="box8">
 			{% for table in tables5 %}
 				{{ titles5[loop.index]}}
@@ -259,7 +362,7 @@
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		</div>
-		<div class="wrapper2">
+		<div class="wrapper3">
 			<div class="box21">
 			{% for table in tables3 %}
 				<!-- {{ titles3[loop.index]}} -->
@@ -271,7 +374,7 @@
 				<!-- <img src="{{ test3_graph }}", width="950", height="400"></img> -->
 <!-- 				<div id="chart"></div>
 
- -->		
+ -->
  				<div id="chart2"></div>
 
 			</div>
@@ -279,9 +382,28 @@
 			<div class='box23'>
  				<div id="chart3"></div>
 			</div>
+
+			<div class="box24">
+			{% for table in positive_article %}
+				<!-- {{ titles2[loop.index]}} -->
+				{{ table|safe }}
+			{% endfor %}
+			</div>
+
+			<div class="box25">
+			{% for table in neutral_article%}
+				{{ table|safe }}
+			{% endfor %}
+			</div>
+
+			<div class="box26">
+			{% for table in negative_article %}
+				{{ table|safe }}
+			{% endfor %}
+			</div>
 		</div>
 
-<!-- 
+<!--
 			<div>Graph1</div>
 			<div><img src="{{ test_graph }}", width="700", height="350"></img></div> -->
 	</body>
